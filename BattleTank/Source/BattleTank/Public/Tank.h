@@ -33,4 +33,7 @@ private:
 
 	// Sets default values for this pawn's properties
 	ATank();
+
+	UPROPERTY(EditAnywhere, Category = Firing)
+	float LaunchSpeed = 100000.0f; //TODO find sensible default
 };
