@@ -2,6 +2,8 @@
 
 #include "TankAimingComponent.h"
 #include "Classes/Components/ActorComponent.h"
+#include "Components/StaticMeshComponent.h"
+#include "TankBarrel.h"
 #include "Kismet/GameplayStatics.h"
 
 // Sets default values for this component's properties
@@ -37,7 +39,7 @@ void UTankAimingComponent::AimAt(FVector HitLocation, float LaunchSpeed)
 	//if no solution found do nothing
 }
 
-void UTankAimingComponent::SetBarrelReference(UStaticMeshComponent * BarrelToSet)
+void UTankAimingComponent::SetBarrelReference(UTankBarrel * BarrelToSet)
 {
 	Barrel = BarrelToSet;
 }
@@ -48,10 +50,7 @@ void UTankAimingComponent::MoveBarrelTowards(FVector AimDirection)
 	auto BarrelRotator = Barrel->GetForwardVector().Rotation();
 	auto AimAsRotator = AimDirection.Rotation();
 	auto DeltaRotator = AimAsRotator - BarrelRotator;
-	UE_LOG(LogTemp, Warning, TEXT("AimAsRotator: %s"), *AimAsRotator.ToString());
 
-	//Move the barrel the right amount this frame
-
-	//given a max elevation speed, and the frame time
+	Barrel->Elevate(5); //TODO remove magic number
 }
 
