@@ -20,6 +20,8 @@ ATank::ATank()
 void ATank::BeginPlay()
 {
 	Super::BeginPlay();
+	auto TankName = GetName();
+	UE_LOG(LogTemp, Warning, TEXT("%s 5660eeed: Tank C++ Begin Play"), *TankName);
 }
 
 void ATank::AimAt(FVector HitLocation)
