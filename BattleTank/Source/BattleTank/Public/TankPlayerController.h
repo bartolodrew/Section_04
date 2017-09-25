@@ -20,8 +20,6 @@ public:
 	virtual void Tick(float DeltaTime) override;	
 
 private:
-	ATank* GetControlledTank() const;
-
 	//start the tank moving the barrel so that a shot would hit where
 	//the crosshair intersects the world.
 	void AimTowardsCrosshair();
@@ -40,4 +38,8 @@ private:
 	float LineTraceRange = 1000000.0f;
 
 	bool GetLookVectorHitLocation(FVector LookDirection, FVector& HitLocation) const;
+
+protected:
+	UFUNCTION(BlueprintCallable, Category = "Setup")
+		ATank* GetControlledTank() const;
 };
