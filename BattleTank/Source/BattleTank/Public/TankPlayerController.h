@@ -7,7 +7,6 @@
 #include "Classes/AIController.h"
 #include "TankPlayerController.generated.h"
 
-class ATank;
 class UTankAimingComponent;
 
 /**
@@ -42,11 +41,8 @@ private:
 	float LineTraceRange = 1000000.0f;
 
 	bool GetLookVectorHitLocation(FVector LookDirection, FVector& HitLocation) const;
-
+	
 protected:
-	UFUNCTION(BlueprintCallable, Category = "Setup")
-	ATank* GetControlledTank() const;
-
 	UFUNCTION(BlueprintImplementableEvent, Category = "Setup")
 	void FoundAimingComponent(UTankAimingComponent* AimCompRef);
 };
