@@ -32,6 +32,7 @@ private:
 
 	virtual void BeginPlay() override;
 
+	//TOD remove once firing is moved to aiming component
 	UPROPERTY(EditAnywhere, Category = "Firing")
 	float LaunchSpeed = 40000.0f;
 
