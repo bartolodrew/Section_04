@@ -8,7 +8,6 @@
 #include "TankAimingComponent.h"
 #include "TankAIController.generated.h"
 
-class ATank;
 /**
  * 
  */
