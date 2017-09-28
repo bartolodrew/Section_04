@@ -27,7 +27,8 @@ void ATankAIController::SetPawn(APawn * InPawn)
 
 void ATankAIController::OnPossessedTankDeath()
 {
-	UE_LOG(LogTemp, Warning, TEXT("Received"));
+	if (!GetPawn()) { return; }
+	GetPawn()->DetachFromControllerPendingDestroy();
 }
 
 void ATankAIController::Tick(float DeltaSeconds)
@@ -35,7 +36,7 @@ void ATankAIController::Tick(float DeltaSeconds)
 	Super::Tick(DeltaSeconds);
 	auto PlayerTank = GetWorld()->GetFirstPlayerController()->GetPawn();
 	auto ControlledTank = GetPawn();
-	if (!ensure(PlayerTank && ControlledTank)) { return; }
+	if (!ensure(PlayerTank && ControlledTank)) { return; }//TODO when player dead this fires!
 
 	//move towards the player
 	MoveToActor(PlayerTank, AcceptanceRadius);//TODO check radius is in cm

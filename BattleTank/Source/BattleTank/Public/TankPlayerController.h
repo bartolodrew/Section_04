@@ -41,6 +41,11 @@ private:
 	float LineTraceRange = 1000000.0f;
 
 	bool GetLookVectorHitLocation(FVector LookDirection, FVector& HitLocation) const;
+
+	UFUNCTION()
+	void OnPossessedTankDeath();
+
+	virtual void SetPawn(APawn* InPawn) override;
 	
 protected:
 	UFUNCTION(BlueprintImplementableEvent, Category = "Setup")
