@@ -36,7 +36,7 @@ void ATankAIController::Tick(float DeltaSeconds)
 	Super::Tick(DeltaSeconds);
 	auto PlayerTank = GetWorld()->GetFirstPlayerController()->GetPawn();
 	auto ControlledTank = GetPawn();
-	if (!ensure(PlayerTank && ControlledTank)) { return; }//TODO when player dead this fires!
+	if (!(PlayerTank && ControlledTank)) { return; }//TODO when player dead this fires!
 
 	//move towards the player
 	MoveToActor(PlayerTank, AcceptanceRadius);//TODO check radius is in cm
