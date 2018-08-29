@@ -24,6 +24,9 @@ public:
 
 	FTankDelegate OnDeath;
 
+	UPROPERTY(BlueprintReadWrite, Category = "Setup")
+	int32 TeamNumber;
+
 private:
 	// Sets default values for this pawn's properties
 	ATank();

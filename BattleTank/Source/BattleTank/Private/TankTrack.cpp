@@ -7,7 +7,7 @@
 
 UTankTrack::UTankTrack()
 {
-	PrimaryComponentTick.bCanEverTick = true;	
+	PrimaryComponentTick.bCanEverTick = true;
 }
 
 TArray<ASprungWheel*> UTankTrack::GetWheels() const

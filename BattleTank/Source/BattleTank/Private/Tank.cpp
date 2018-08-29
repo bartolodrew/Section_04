@@ -2,6 +2,8 @@
 
 #include "Tank.h"
 #include "Engine/World.h"
+#include "GameFramework/Controller.h"
+#include "TankTrack.h"
 
 float ATank::GetHealthPercent() const
 {
