@@ -1,4 +1,4 @@
-// Copyright To This Clueless Bastard
+// Copyright to Andrew Bartolo for my own purposes and mine alone.
 
 #include "SprungWheel.h"
 #include "Components/StaticMeshComponent.h"

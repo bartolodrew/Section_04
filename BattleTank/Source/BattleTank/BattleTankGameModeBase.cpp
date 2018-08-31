@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+// Copyright to Andrew Bartolo for my own purposes and mine alone.
 
 #include "BattleTankGameModeBase.h"
 
